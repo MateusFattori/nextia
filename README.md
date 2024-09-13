@@ -10,6 +10,10 @@ Pedro Baraldi Sá RM:98060
 
 Mateus Fattori RM:97904 Responsavel pelo Challenge de Java
 
+## Swagger
+
+https://loclahost:8080/docs
+
 ## Documenação
 
 Dentro da Pasta documentacao está a documentação Word junto com os arquivos JSON para testar o código tanto no Postman quanto no Insominia
