@@ -139,9 +139,9 @@ Altera o cliente com o `id` informado.
     "genero": "feminino",
     "dt_nascimento": "2003-06-24",
     "telefone": "55119975864319",
-	"pontos": 200,
-	"fidelidade": "FILIADO"
-	}
+     "pontos": 200,
+     "fidelidade": "FILIADO"
+}
 
 ```
 
