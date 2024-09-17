@@ -10,6 +10,10 @@ Pedro Baraldi Sá RM:98060
 
 Mateus Fattori RM:97904 Responsavel pelo Challenge de Java
 
+## Swagger
+
+https://loclahost:8080/docs
+
 ## Documenação
 
 Dentro da Pasta documentacao está a documentação Word junto com os arquivos JSON para testar o código tanto no Postman quanto no Insominia
@@ -127,7 +131,7 @@ Altera o cliente com o `id` informado.
 
 ```js
 {
-    '"id": 2,
+    "id": 2,
     "nome": "Bia",
     "cpf": "56842367104",
     "email": "bia@gmail.com",
@@ -135,9 +139,9 @@ Altera o cliente com o `id` informado.
     "genero": "feminino",
     "dt_nascimento": "2003-06-24",
     "telefone": "55119975864319",
-	"pontos": 200,
-	"fidelidade": "FILIADO"
-	}
+    "pontos": 200,
+    "fidelidade": "FILIADO"
+}
 
 ```
 
