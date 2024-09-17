@@ -26,7 +26,7 @@ import br.com.fiap.netxai.repository.ClienteRepository;
 import lombok.extern.slf4j.Slf4j;
 
 
-@CrossOrigin(origins = "https://witty-desert-0abd3be0f.5.azurestaticapps.net")
+@CrossOrigin(origins = "http://localhost:8080")
 @RestController
 @RequestMapping("cliente")
 @Slf4j
