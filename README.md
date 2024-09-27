@@ -41,6 +41,10 @@ Deve abrir o projeto no visual studio code e com a extenção Extension Pack for
 
 https://youtu.be/Gbiqv_7_bpo
 
+## Link do Video 
+
+https://youtu.be/Me1fZYhueU4
+
 ## Endpoints
 
 ### Cliente
