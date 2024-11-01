@@ -24,7 +24,7 @@ import br.com.fiap.nextia.model.Cliente;
 import br.com.fiap.nextia.repository.ClienteRepository;
 import lombok.extern.slf4j.Slf4j;
 
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("cliente")
 @Slf4j

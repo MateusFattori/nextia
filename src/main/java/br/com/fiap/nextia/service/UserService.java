@@ -1,41 +1,38 @@
 package br.com.fiap.nextia.service;
 
-import br.com.fiap.nextia.dto.UserProfileResponse;
 import br.com.fiap.nextia.model.User;
 import br.com.fiap.nextia.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Optional;
 
 @Service
 public class UserService {
 
     @Autowired
-    UserRepository repository;
+    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
-
-    public List<User> findAll() {
-        return repository.findAll();
+    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
-    public User create(User user) {
+    public User createUser(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        return repository.save(user);
+        return userRepository.save(user);
     }
 
-    public UserProfileResponse getProfile(String username) {
-        return repository.findByUsername(username)
-                .map(UserProfileResponse::new)
-                .orElseThrow(() -> new RuntimeException("User not found"));
+    public Optional<User> findByUsername(String username) {
+        return userRepository.findByUsername(username);
     }
 
-    public List<User> search(String name) {
-        return repository.findAll().stream()
-                .filter(user -> user.getUsername().toLowerCase().contains(name.toLowerCase()))
-                .collect(Collectors.toList());
+    public User updatePassword(String username, String newPassword) {
+        User user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+        
+        user.setPassword(passwordEncoder.encode(newPassword));
+        return userRepository.save(user);
     }
 }

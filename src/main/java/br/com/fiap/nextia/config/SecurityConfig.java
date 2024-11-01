@@ -22,12 +22,13 @@ public class SecurityConfig {
 
         http.authorizeHttpRequests(auth -> 
             auth
+                .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
                 .requestMatchers(HttpMethod.POST, "/login").permitAll() 
-                .requestMatchers(HttpMethod.POST, "/products").hasRole("GERENTE_ESTOQUE") 
-                .requestMatchers(HttpMethod.POST, "/clients").hasRole("GERENTE_CLIENTES") 
+                .requestMatchers(HttpMethod.POST, "/products").hasAnyRole("GERENTE_ESTOQUE", "ADMIN") 
+                .requestMatchers(HttpMethod.POST, "/clients").hasAnyRole("GERENTE_CLIENTES", "ADMIN") 
                 .requestMatchers(HttpMethod.GET, "/products/**").hasAnyRole("GERENTE_ESTOQUE", "GERENTE_CLIENTES", "ADMIN") 
                 .requestMatchers(HttpMethod.GET, "/clients/**").hasAnyRole("GERENTE_CLIENTES", "ADMIN")
-                .anyRequest().denyAll() 
+                .anyRequest().denyAll()  
         );
 
         http.addFilterBefore(authorizationFilter, UsernamePasswordAuthenticationFilter.class); 
