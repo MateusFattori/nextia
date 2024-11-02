@@ -1,4 +1,3 @@
-// AuthorizationFilter.java
 package br.com.fiap.nextia.auth;
 
 import jakarta.servlet.FilterChain;
