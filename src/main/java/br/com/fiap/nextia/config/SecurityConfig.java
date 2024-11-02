@@ -22,13 +22,13 @@ public class SecurityConfig {
 
         http.authorizeHttpRequests(auth -> 
             auth
-                .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
-                .requestMatchers(HttpMethod.POST, "/login").permitAll() 
-                .requestMatchers(HttpMethod.POST, "/products").hasAnyRole("GERENTE_ESTOQUE", "ADMIN") 
-                .requestMatchers(HttpMethod.POST, "/clients").hasAnyRole("GERENTE_CLIENTES", "ADMIN") 
-                .requestMatchers(HttpMethod.GET, "/products/**").hasAnyRole("GERENTE_ESTOQUE", "GERENTE_CLIENTES", "ADMIN") 
-                .requestMatchers(HttpMethod.GET, "/clients/**").hasAnyRole("GERENTE_CLIENTES", "ADMIN")
-                .anyRequest().denyAll()  
+                .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html", "/docs").permitAll()
+                .requestMatchers(HttpMethod.POST, "/login").permitAll()
+                .requestMatchers(HttpMethod.POST, "/produto").hasAnyRole("GERENTE_ESTOQUE", "ADMIN") 
+                .requestMatchers(HttpMethod.POST, "/cliente").hasAnyRole("GERENTE_CLIENTES", "ADMIN") 
+                .requestMatchers(HttpMethod.GET, "/produto/**").hasAnyRole("GERENTE_ESTOQUE", "GERENTE_CLIENTES", "ADMIN") 
+                .requestMatchers(HttpMethod.GET, "/cliente/**").hasAnyRole("GERENTE_ESTOQUE", "GERENTE_CLIENTES", "ADMIN") 
+                .anyRequest().authenticated() 
         );
 
         http.addFilterBefore(authorizationFilter, UsernamePasswordAuthenticationFilter.class); 
