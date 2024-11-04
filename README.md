@@ -155,7 +155,8 @@ Altera o cliente com o `id` informado.
     "dt_nascimento": "2003-06-24",
     "telefone": "55119975864319",
     "pontos": 200,
-    "fidelidade": "FILIADO"
+    "fidelidade": "FILIADO",
+    "dt_filiacao": "2020-10-20"
 }
 
 ```
