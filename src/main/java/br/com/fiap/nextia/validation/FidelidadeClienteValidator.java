@@ -7,7 +7,7 @@ public class FidelidadeClienteValidator implements ConstraintValidator<Fidelidad
     
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
-        return value.equals("FILIADO") || value.equals("NÃOFILIADO");
+        return value.equals("AFILIADO") || value.equals("NÃOFILIADO");
     }
 
 }

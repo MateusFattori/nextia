@@ -14,7 +14,7 @@ import jakarta.validation.Payload;
 @Retention(RUNTIME)
 public @interface FidelidadeCliente {
 
-    String message() default "Fidelidade inválida. Fidelidade deve ser FILIADO ou NÃOFILIADO.";
+    String message() default "Fidelidade inválida. Fidelidade deve ser AFILIADO ou NÃOFILIADO.";
 
     Class<?>[] groups() default { };
 
