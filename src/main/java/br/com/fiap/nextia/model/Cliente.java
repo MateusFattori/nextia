@@ -55,5 +55,7 @@ public class Cliente {
 
     @FidelidadeCliente(message = "{cliente.tipo.tipocliente}")
     private String fidelidade; // FILIADO | NÃOFILIADO
+
+    private String categoria;
     
 }

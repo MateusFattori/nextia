@@ -1,4 +1,3 @@
-// AuthService.java
 package br.com.fiap.nextia.service;
 
 import org.springframework.security.crypto.password.PasswordEncoder;

@@ -27,7 +27,8 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.POST, "/produto").hasAnyRole("GERENTE_ESTOQUE", "ADMIN") 
                 .requestMatchers(HttpMethod.POST, "/cliente").hasAnyRole("GERENTE_CLIENTES", "ADMIN") 
                 .requestMatchers(HttpMethod.GET, "/produto/**").hasAnyRole("GERENTE_ESTOQUE", "GERENTE_CLIENTES", "ADMIN") 
-                .requestMatchers(HttpMethod.GET, "/cliente/**").hasAnyRole("GERENTE_ESTOQUE", "GERENTE_CLIENTES", "ADMIN") 
+                .requestMatchers(HttpMethod.GET, "/cliente/**").hasAnyRole("GERENTE_ESTOQUE", "GERENTE_CLIENTES", "ADMIN")
+                .requestMatchers("/actuator/**").permitAll()
                 .anyRequest().authenticated() 
         );
 
