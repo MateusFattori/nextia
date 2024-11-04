@@ -1,14 +1,5 @@
 # nextia
 
-# DevOps
-
-PROFESSOR DE DEVOPS O LINK PARA O REPOSITORIO CORRETO ESTÁ LOGO ABAIXO
-https://github.com/MateusFattori/nextai
-
-# JAVA 
-
-PROFESSOR DE JAVA ESTE AQUI É O SEU REPOSITORIO O LINK DELE ESTÁ CORRETO
-
 ## Integrantes
 
 Bianca Barreto RM:551848
@@ -18,6 +9,8 @@ Julia Akemi RM:98032
 Pedro Baraldi Sá RM:98060
 
 Mateus Fattori RM:97904 Responsavel pelo Challenge de Java
+
+Lucas Monte RM:551604
 
 ## Swagger
 
@@ -153,7 +146,8 @@ Altera o cliente com o `id` informado.
     "dt_nascimento": "2003-06-24",
     "telefone": "55119975864319",
     "pontos": 200,
-    "fidelidade": "FILIADO"
+    "fidelidade": "FILIADO",
+    "dt_filiacao": "2020-10-20"
 }
 
 ```
