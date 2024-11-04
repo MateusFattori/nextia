@@ -19,6 +19,8 @@ Pedro Baraldi Sá RM:98060
 
 Mateus Fattori RM:97904 Responsavel pelo Challenge de Java
 
+Lucas Monte RM:551604
+
 ## Swagger
 
 https://loclahost:8080/docs
