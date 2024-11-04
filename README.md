@@ -1,14 +1,5 @@
 # nextia
 
-# DevOps
-
-PROFESSOR DE DEVOPS O LINK PARA O REPOSITORIO CORRETO ESTÁ LOGO ABAIXO
-https://github.com/MateusFattori/nextai
-
-# JAVA 
-
-PROFESSOR DE JAVA ESTE AQUI É O SEU REPOSITORIO O LINK DELE ESTÁ CORRETO
-
 ## Integrantes
 
 Bianca Barreto RM:551848
