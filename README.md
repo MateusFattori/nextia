@@ -12,6 +12,13 @@ Mateus Fattori RM:97904 Responsavel pelo Challenge de Java
 
 Lucas Monte RM:551604
 
+## conta do RabbitMQ
+
+email: nextiamateus@gmail.com
+
+senha: Nextia123
+
+
 ## Swagger
 
 https://loclahost:8080/docs
