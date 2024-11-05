@@ -1,28 +1,28 @@
 package br.com.fiap.nextia.controller;
 
+import br.com.fiap.nextia.service.AuthRequest; // Atualize o import
+import br.com.fiap.nextia.service.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import br.com.fiap.nextia.model.Credentials;
-import br.com.fiap.nextia.model.User;
-import br.com.fiap.nextia.service.AuthService;
-
 @RestController
-@RequestMapping("/login")
+@RequestMapping("/api/auth")
 public class AuthController {
 
     @Autowired
-    private AuthService authService;
+    private JwtUtil jwtUtil;
 
-    @PostMapping
-    public ResponseEntity<User> login(@RequestBody Credentials credentials) {
-        User user = authService.authenticate(credentials);
+    @PostMapping("/login")
+    public ResponseEntity<String> login(@RequestBody AuthRequest authRequest) {
+        // Aqui você pode adicionar lógica para verificar o usuário e a senha no banco de dados
+        String token = jwtUtil.gerarToken(authRequest.getUsuario(), authRequest.getSenha());
+        return ResponseEntity.ok(token);
+    }
 
-        if (user != null) {
-            return ResponseEntity.ok(user);
-        }
-
-        return ResponseEntity.status(401).build();
+    @GetMapping("/validate")
+    public ResponseEntity<Boolean> validateToken(@RequestParam String token) {
+        boolean isValid = jwtUtil.validarToken(token);
+        return ResponseEntity.ok(isValid);
     }
 }

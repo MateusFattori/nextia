@@ -28,6 +28,12 @@ public class AuthorizationFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) 
             throws ServletException, IOException {
+        // Permitir acesso ao endpoint de login
+        if (request.getRequestURI().equals("/login") && request.getMethod().equals("POST")) {
+            filterChain.doFilter(request, response);
+            return;
+        }
+
         // Verificar se o cabeçalho Authorization está presente e no formato Basic
         var header = request.getHeader("Authorization");
         if (header == null || !header.startsWith("Basic ")) {
@@ -53,7 +59,7 @@ public class AuthorizationFilter extends OncePerRequestFilter {
             User user = authService.authenticate(credentials);
 
             if (user != null) {
-                // Definir as autoridades com base na role do usuário autenticado, com o prefixo "ROLE_"
+                // Definir as autoridades com base na role do usuário autenticado
                 var auth = new UsernamePasswordAuthenticationToken(
                         username,
                         null, // Não estamos usando a senha aqui
