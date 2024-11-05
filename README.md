@@ -30,13 +30,10 @@ Deve abrir o projeto no visual studio code e com a extenção Extension Pack for
 
 ![image](https://github.com/MateusFattori/nextai/assets/83764798/d8888af4-334e-4fc1-8d2c-7d1758559943)
 
-## Video da solução
-
-https://youtu.be/Gbiqv_7_bpo
 
 ## Link do Video 
 
-https://youtu.be/Me1fZYhueU4
+https://youtu.be/Lf2jFqWHi2Y
 
 ## Endpoints
 
