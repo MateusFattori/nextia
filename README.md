@@ -18,6 +18,11 @@ email: nextiamateus@gmail.com
 
 senha: Nextia123
 
+## Login de Acesso e autenticação 
+
+username: admin
+
+password: admin123
 
 ## Swagger
 
